@@ -13,7 +13,7 @@ WORKDIR /usr/share/elasticsearch
 EXPOSE 9200 9300
 RUN pwd
 RUN ls -ltr
-RUN ls -ltr /etc/.ci-agent/workspace/
+RUN ls -ltr /etc/.ci-agent/workspace/*/*
 
 # # Copy custom configuration files (if needed)
 # # Uncomment the line below if you have a custom configuration file
