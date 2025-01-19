@@ -17,8 +17,8 @@ RUN ls -ltr /etc/.ci-agent/workspace/*/*
 
 # Copy custom configuration files (if needed)
 # Uncomment the line below if you have a custom configuration file
-COPY /etc/.ci-agent/workspace/elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
-COPY /etc/.ci-agent/workspace/elasticsearch/log4j2.properties /usr/share/elasticsearch/config/log4j2.docker.properties
+COPY ./elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+COPY ./elasticsearch/log4j2.properties /usr/share/elasticsearch/config/log4j2.docker.properties
 
 # Install plugins (if needed)
 # Uncomment the lines below to install specific plugins
