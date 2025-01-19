@@ -14,8 +14,8 @@ EXPOSE 9200 9300
 
 # Copy custom configuration files (if needed)
 # Uncomment the line below if you have a custom configuration file
-COPY elasticsearch.yml config/elasticsearch.yml
-COPY log4j2.properties config/log4j2.docker.properties
+COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+COPY log4j2.properties /usr/share/elasticsearch/config/log4j2.docker.properties
 
 # Install plugins (if needed)
 # Uncomment the lines below to install specific plugins
