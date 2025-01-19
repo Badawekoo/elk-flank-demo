@@ -11,20 +11,23 @@ WORKDIR /usr/share/elasticsearch
 
 # Expose the default Elasticsearch ports
 EXPOSE 9200 9300
+RUN pwd
+RUN ls -ltr
+RUN ls -ltr /etc/.ci-agent/workspace/
 
-# Copy custom configuration files (if needed)
-# Uncomment the line below if you have a custom configuration file
-COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
-COPY log4j2.properties /usr/share/elasticsearch/config/log4j2.docker.properties
+# # Copy custom configuration files (if needed)
+# # Uncomment the line below if you have a custom configuration file
+# COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+# COPY log4j2.properties /usr/share/elasticsearch/config/log4j2.docker.properties
 
-# Install plugins (if needed)
-# Uncomment the lines below to install specific plugins
-# RUN bin/elasticsearch-plugin install analysis-icu
-# RUN bin/elasticsearch-plugin install analysis-phonetic
+# # Install plugins (if needed)
+# # Uncomment the lines below to install specific plugins
+# # RUN bin/elasticsearch-plugin install analysis-icu
+# # RUN bin/elasticsearch-plugin install analysis-phonetic
 
-# Set permissions (Elasticsearch requires certain permissions)
-RUN chmod -R 0775 /usr/share/elasticsearch && \
-    chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
+# # Set permissions (Elasticsearch requires certain permissions)
+# RUN chmod -R 0775 /usr/share/elasticsearch && \
+#     chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
 
-# Run Elasticsearch as the default command
-CMD ["bin/elasticsearch"]
+# # Run Elasticsearch as the default command
+# CMD ["bin/elasticsearch"]
