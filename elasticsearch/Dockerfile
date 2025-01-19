@@ -26,8 +26,9 @@ COPY ./elasticsearch/log4j2.properties /usr/share/elasticsearch/config/log4j2.do
 # RUN bin/elasticsearch-plugin install analysis-phonetic
 
 # Set permissions (Elasticsearch requires certain permissions)
-RUN chmod -R 0775 /usr/share/elasticsearch && \
-    chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
+RUN chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
+RUN chmod -R 0775 /usr/share/elasticsearch
+    
 
 # Run Elasticsearch as the default command
 CMD ["bin/elasticsearch"]
